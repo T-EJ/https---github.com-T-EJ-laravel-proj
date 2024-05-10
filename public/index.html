@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="st.css">
+
+
+<style>
+  
+ .h1 {
+ font-weight: 600;
+ padding-top: 20px;
+ text-align: center;
+ font-size: 32px;
+ padding-bottom: 10px;
+}
+
+a {
+ font-weight: 600;
+ color: white;
+}
+
+.input-field  {
+border: none;
+margin-bottom: 15px;
+color: #bfc0c0;
+background: #262626;
+padding: 20px;
+font-size: 16px;
+border-radius: 10px;
+box-shadow: inset 5px 5px 5px #232323, 
+            inset -5px -5px 5px #292929;
+outline: none;
+}
+
+.second-button {
+margin-top: 20px;
+padding: 20px 30px;
+border-radius: 40px;
+border: none;
+color: white;
+font-size: 18px;
+font-weight: 500;
+background: #262626;
+box-shadow:  8px 8px 15px #202020, 
+             -8px -8px 15px #2c2c2c;
+transition: box-shadow .35s ease !important;
+outline: none;
+}
+
+.second-button:active{
+background: linear-gradient(145deg,#222222, #292929);
+box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
+border: none;
+outline: none;
+}
+p{
+color: #bfc0c0;
+padding: 20px;
+}
+
+  body {
+  background: #262626;
+  font-family: raleway;
+  color: white;
+  margin: 0;
+}
+
+.popup .content {
+ width: 300px;
+ height: 450px;
+ z-index: 2;
+ text-align: center;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-150%) scale(0);
+ padding: 20px;
+ border-radius: 20px;
+ background: #262626;
+ position: absolute;
+ box-shadow:  38px 38px 56px #1e1e1e, 
+             -25px -25px 38px #1e1e1e;
+ z-index: 1;
+}
+   .first-button {
+border-radius: 40px;
+border: none;
+position: absolute;
+top: 50%;
+left: 20%;
+color: white;
+font-size: 18px;
+font-weight: 500;
+padding: 30px 50px;
+transform: translate(-50%, -50%);
+background: #262626;
+box-shadow:  18px 18px 25px #1e1e1e, 
+             -15px -15px 25px #1e1e1e;
+transition: box-shadow .35s ease !important;
+outline: none;
+}
+
+.first-button:active {  
+background: linear-gradient(145deg, #222222, #292929);
+box-shadow:  5px 5px 10px #262626, 
+             -5px -5px 10px #262626;
+border: none;
+}
+/* Popup active */
+.popup.active .content {
+transition: all 300ms ease-in-out;
+transform: translate(-50%,-50%) scale(1);
+}
+ 
+
+</style>
+</head>
+<body>
+ <div class="popup" id="popup-1">
+   <div class="content">
+
+    <!--Cancel Button-->
+     <h1>Sign in</h1> 
+       <div class="input-field"><input placeholder="Email" class="validate"></div>
+       <div class="input-field"><input placeholder="Password" class="validate"></div>
+        <button class="second-button">Sign in</button>
+    <p>Don't have an account? <a href="/signup.html">Sign Up</a></p>
+        <!--Login Form-->
+         
+        <!--Pop-up Button-->
+		<button> onclick="togglePopup()" class="first-button">Sign In</button>
+    
+    </div>
+  </div>
+
+<script>
+    //JavaScript Code
+</script>
+
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAD-Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      body{
+    font-family: 'Courier New', Courier, monospace;
+    background: url(bg-image2.jpg);
+    background-size: cover;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 300%;
+    width: 50%;
+    align-items: center;
+    margin: auto;
+    margin-top: 120px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: inset -6px -6px rgba(0, 0, 0, 0.5);
+}
+
+.box h1{
+    text-transform: uppercase;
+    margin-top: 0;
+    text-align: left;
+    font-size: 36px;
+    border-bottom: 3px solid rgb(32, 136,75);
+    margin-bottom: 20px;
+    padding-bottom: 2px;
+}
+
+.input-box{
+    width: 100%;
+    overflow: auto;
+    font-size: 22px;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-bottom: 2px solid rgb(172, 95, 32);
+    transition: 0.2s;
+}
+    </style>
+</head>
+
+<body>
+<form class="box" action="/product" enctype="multipart/form-data" method="post">
+<div class="d-flex flex-row align-items-center mb-4">
+    @csrf
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="productid" name="productid" class="input-box" />
+                      <label class="form-label" for="form3Example3c">product Id(category)</label>
+                    </div>
+                  </div>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="name" name="name" class="input-box" />
+                      <label class="form-label" for="form3Example3c">Product Name</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="pwd" name="price" class="input-box" />
+                      <label class="form-label" for="form3Example4c">Price</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="file" id="pwd" name="img" class="input-box" />
+                      <label class="form-label" for="form3Example4c">Image</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="textarea" id="pwd" name="desc" class="input-box" />
+                      <label class="form-label" for="form3Example4c">Description</label>
+                    </div>
+                  </div>
+                  <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="textarea" id="pwd" name="look" class="input-box" />
+                      <label class="form-label" for="form3Example4c">How to Look after me?</label>
+                    </div>
+                  </div>
+                  <button type="submit">upload</button>
+</form>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Transparent Login Form</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>      
+        <form action="index.html" method="post" class="box">
+            <h1>Login</h1>
+            <div class="input-box">
+                <i class="fa fa-user-secret" aria-hidden="true"></i>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="input-box">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <button type="submit">Login</button>
+        </form>  
+    </body>
+</html> -->
